@@ -1,164 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My JavaScript Projects</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#3B82F6",
-              dark: "#0F172A",  // Darker background color
-              light: "#E2E8F0",  // Light text color
-            },
-          },
-        },
-      };
-    </script>
-    <style>
-      .project-card:hover .project-title {
-        color: #3b82f6;
-      }
-      .project-card:hover img {
-        transform: scale(1.05);
-      }
-      .nav-transition {
-        transition: all 0.3s ease;
-      }
-      .social-icon:hover {
-        transform: translateY(-3px);
-        color: #3b82f6 !important;
-      }
-    </style>
-  </head>
-  <body class="bg-dark min-h-screen flex flex-col">
-    <nav class="bg-gray-800 shadow-md nav-transition sticky top-0 z-50">
-      <div class="container mx-auto px-4">
-        <div class="flex justify-between items-center py-4">
-          <div class="flex items-center space-x-4">
-            <a href="#" class="text-2xl font-bold text-light hover:text-primary">
-              <i class="fas fa-code mr-2"></i>JSProjects
-            </a>
-          </div>
-
-          <div class="hidden md:flex items-center space-x-8">
-            <a
-              href="#projects"
-              class="text-gray-300 hover:text-primary font-medium"
-              >Projects</a
-            >
-            <a
-              href="#about"
-              class="text-gray-300 hover:text-primary font-medium"
-              >About</a
-            >
-            <a
-              href="https://github.com/sonuthakur03"
-              target="_blank"
-              class="flex items-center text-gray-300 hover:text-primary">
-              <i class="fab fa-github mr-2"></i> GitHub
-            </a>
-          </div>
-
-          <!-- Mobile menu button -->
-          <button id="mobile-menu-button" class="md:hidden text-gray-300">
-            <i class="fas fa-bars text-xl"></i>
-          </button>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden pb-4">
-          <a
-            href="#projects"
-            class="block py-2 text-gray-300 hover:text-primary"
-            >Projects</a
-          >
-          <a href="#about" class="block py-2 text-gray-300 hover:text-primary"
-            >About</a
-          >
-          <a
-            href="https://github.com/sonuthakur03"
-            target="_blank"
-            class="block py-2 text-gray-300 hover:text-primary">
-            <i class="fab fa-github mr-2"></i> GitHub
-          </a>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="flex-grow container px-4 py-12" id="about">
-      <!-- Header -->
-      <header class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-bold text-light mb-4">
-          My JavaScript Projects
-        </h1>
-        <p class="text-lg text-gray-400 max-w-2xl mx-auto">
-          A collection of interactive web applications built with HTML, CSS, and
-          JavaScript
-        </p>
-      </header>
-
-      <!-- Projects Grid -->
-      <section id="projects" class="w-11/12 flex items-center justify-center flex-col mx-auto">
-        <h2 class="text-3xl font-bold text-light mb-8 text-center">
-          Featured Projects
-        </h2>
-        <div
-          class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-8"
-          id="projects-container">
-          <!-- Projects will be injected here by JavaScript -->
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-      <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <div class="mb-6 md:mb-0">
-            <h3 class="text-2xl font-bold mb-4">Sonu Thakur</h3>
-            <p class="text-gray-400">Learning JavaScript developer</p>
-          </div>
-
-          <div class="flex flex-col items-center md:items-end">
-            <div class="flex space-x-6 mb-6">
-              <a
-                href="https://github.com/sonuthakur03"
-                target="_blank"
-                class="social-icon text-gray-400 hover:text-white text-2xl transition-all">
-                <i class="fab fa-github"></i>
-              </a>
-              <a
-                href="https://x.com/Sonu03_Thakur"
-                target="_blank"
-                class="social-icon text-gray-400 hover:text-white text-2xl transition-all">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/sonuthakur03/"
-                target="_blank"
-                class="social-icon text-gray-400 hover:text-white text-2xl transition-all">
-                <i class="fab fa-linkedin"></i>
-              </a>
-              <a
-                href="mailto:rsonuth@email.com"
-                class="social-icon text-gray-400 hover:text-white text-2xl transition-all">
-                <i class="fas fa-envelope"></i>
-              </a>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApiRequest</title> 
+    <link rel="stylesheet" href="css/index.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <main>
+    <div class="container">
+        <h2>Welcome! Please enter your username:</h2>
+        <form onsubmit="submitForm(event)">
+            <input type="text" id="usernameInput" placeholder="Enter your username" required>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div class="card">
+     <div class="profile">
+        <div id="images"> 
+            <img id="image" src="https://images.unsplash.com/photo-1711725104835-91f1ecc9bd96?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></img> 
             </div>
-            <p class="text-gray-500 text-sm">© 2025 All rights reserved</p>
-          </div>
+        <div class="btn1"> 
+          <div id="follower"> 
+            <button id="followers" class="btn">__</button> 
+            <p class="para">Followers</p> 
+            </div>
+            <div id="followings"> 
+            <button id="following" class="btn">__</button>    
+            <p class="para">Following</p> 
+            </div>
         </div>
-      </div>
-    </footer>
-    <script type="module" src="landingpage/js/index.js"></script>
-    <script type="module" src="landingpage/js/projects.js"></script>
-  </body>
+     </div>      
+        <div class="desc">
+            <div class="heading"> 
+                <h2 id="name">Username</h2> 
+                <p>dolore viverra curae ancillae fringilla aliquid postea elit honestatis luctus qualisque discere dissentiunt aliquam arcu ea eripuit</p> 
+            </div>
+            <div class="btn2"> 
+                <a href="#">Read more</a> 
+            </div>
+        </div>     
+    </div>
+</main>
+    <script src="js/index.js"></script>
+</body>
 </html>
