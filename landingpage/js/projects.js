@@ -1,7 +1,7 @@
 export const projectsData = [
     {
       title: "Tic Tac Toe",
-      path: "tic-tac-toe",
+      path: "JavaScript/tic-tac-toe",
       description: "Classic game with responsive design",
       tags: ["Game", "Interactive"],
       image: "landingpage/images/ttt.png"
