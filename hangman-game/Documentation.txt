@@ -1,0 +1,158 @@
+### Hangman Game HTML Documentation
+
+#### HTML Structure:
+1. **<!DOCTYPE html>**: Declares the document type and version of HTML used.
+2. **<html lang="en">**: Defines the root element of the HTML document with the language attribute set to English.
+3. **<head>**: Contains meta-information about the HTML document and links to external resources like CSS stylesheets and JavaScript files.
+   - **Meta tags**: Define character encoding and viewport settings.
+   - **<title>**: Sets the title of the document.
+   - **<style>**: Contains CSS styles for the document.
+   - **<script>**: Links to JavaScript files.
+
+4. **<body>**: Contains the visible content of the HTML document.
+
+#### HTML Components:
+1. **Game Modal**:
+   - `<div class="game-modal">`: Modal container for game over messages and options.
+     - `<div class="content">`: Content area of the modal.
+       - `<img src="" alt="gif">`: Placeholder for victory or defeat gif.
+       - `<h4>Game Over </h4>`: Heading for game over message.
+       - `<p>The correct word was: <b>rainbow</b></p>`: Paragraph displaying the correct word.
+       - `<button class="play-again">Play Again</button>`: Button to start a new game.
+
+2. **Main Container**:
+   - `<div class="container">`: Main container for the game layout.
+     - **Hangman Box**:
+       - `<div class="hangman-box">`: Container for hangman image and title.
+         - `<img src="images/hangman-0.svg" alt="">`: Hangman image.
+         - `<h1>Hangman Game</h1>`: Title of the game.
+     - **Game Box**:
+       - `<div class="game-box">`: Container for word display, hint, wrong guesses count, and keyboard.
+         - `<ul class="word-display"></ul>`: Unordered list for displaying the word to guess.
+         - `<h4 class="hint-text">`: Hint text.
+           - `<b>montes fusce dui adipisci sanctus inani iuvaret blandit</b>`: Placeholder for the hint.
+         - `<h4 class="guesses-text">`: Wrong guesses count.
+           - `<b>0 / 6</b>`: Placeholder for displaying wrong guesses count.
+         - `<div class="keyboard"></div>`: Container for keyboard buttons.
+
+#### Conclusion:
+This Hangman game HTML structure outlines the components necessary for creating the game interface. It includes a game modal for displaying game over messages and options, a main container for organizing the game layout, and specific components like hangman box, game box, word display, hint, wrong guesses count, and keyboard. Each component is structured using appropriate HTML elements and classes for styling and JavaScript functionality.
+
+
+
+### Hangman Game CSS Documentation
+
+#### Global Styles:
+1. **Box Sizing**:
+   - `box-sizing: border-box;`: Ensures that padding and border are included in the element's total width and height.
+
+2. **Font**:
+   - `font-family: "Open Sans", sans-serif;`: Sets the default font family to Open Sans for the entire document.
+
+3. **Body**:
+   - `display: flex;`: Uses flexbox to center content vertically and horizontally.
+   - `align-items: center;`: Aligns content vertically in the center.
+   - `justify-content: center;`: Aligns content horizontally in the center.
+   - `padding: 0 10px;`: Adds padding to the body.
+
+4. **Container**:
+   - `width: 850px;`: Sets the width of the container to 850 pixels.
+   - `background-color: #fff;`: Sets the background color of the container to white.
+   - `display: flex;`: Uses flexbox to arrange child elements.
+   - `padding: 60px 40px;`: Adds padding to the container.
+   - `border-radius: 10px;`: Adds rounded corners to the container.
+   - `align-items: flex-end;`: Aligns items at the end of the container.
+   - `gap: 70px;`: Sets the gap between child elements.
+
+5. **Hangman Box**:
+   - `max-width: 270px;`: Sets the maximum width of the hangman image container.
+   - `h1`: Styles the title of the hangman game.
+
+6. **Word Display**:
+   - `list-style: none;`: Removes the bullet points from the word display list.
+   - `.letter`: Styles individual letters in the word display.
+
+7. **Keyboard**:
+   - `.keyboard button`: Styles the keyboard buttons.
+     - `padding: 15px;`: Adds padding to the buttons.
+     - `width: calc(100% / 9 - 5px);`: Sets the width of each button.
+     - `background: #5e63ba;`: Sets the background color of the buttons.
+     - `border-radius: 4px;`: Adds rounded corners to the buttons.
+
+8. **Game Modal**:
+   - `.game-modal`: Styles the game over modal.
+     - `position: fixed;`: Positions the modal fixed relative to the viewport.
+     - `background: rgba(0,0,0,0.6);`: Sets the background color of the modal with partial transparency.
+     - `opacity: 0;`: Sets the initial opacity to 0.
+     - `pointer-events: none;`: Disables pointer events on the modal.
+     - `transition: opacity 0.4s ease;`: Adds a smooth transition effect for opacity changes.
+     - `align-items: center;`: Aligns items vertically in the center.
+     - `justify-content: center;`: Aligns items horizontally in the center.
+     - `top: 0; left: 0; width: 100%; height: 100%;`: Positions the modal to cover the entire viewport.
+
+#### Media Queries:
+- `@media (max-width: 782px)`: Applies styles for screens with a maximum width of 782 pixels.
+   - Adjusts the container's layout to a column and reduces padding.
+   - Modifies the maximum width of the hangman image.
+
+#### Conclusion:
+The CSS styles for the Hangman game provide layout, formatting, and visual enhancements to the HTML structure. Styles are applied globally to elements such as body and container, while specific elements like hangman box, word display, keyboard, and game modal are styled individually. Media queries ensure that the game layout remains responsive and adjusts appropriately for different screen sizes.
+
+
+
+### Hangman Game JavaScript Documentation
+
+#### Global Variables:
+1. **wordList**: An array containing objects with words and corresponding hints for the game.
+
+#### Functions:
+1. **resetGame Function**:
+   - Purpose: Resets the game by clearing guessed letters and resetting the hangman image and wrong guess count.
+   - Actions:
+     - Resets the `correctLetters` array to an empty array.
+     - Sets `wrongGuessCount` to 0.
+     - Clears the word display.
+     - Removes the 'show' class from the game modal.
+     - Resets the hangman image to the initial state.
+     - Updates the wrong guesses count text.
+
+2. **getRandomWords Function**:
+   - Purpose: Selects a random word from the `wordList` array and displays its hint.
+   - Actions:
+     - Retrieves a random word object from the `wordList` array.
+     - Sets the `currentWord` variable to the selected word.
+     - Calls the `resetGame` function to start a new game.
+     - Displays the hint for the selected word.
+
+3. **gameover Function**:
+   - Purpose: Handles game over scenarios by displaying a modal with appropriate messages and images.
+   - Actions:
+     - Checks if the game is won or lost.
+     - Displays a victory or defeat message with the correct word.
+     - Shows a corresponding gif image.
+     - Adds the 'show' class to the game modal to display it.
+     - Delays the display of the modal using setTimeout.
+
+4. **initGame Function**:
+   - Purpose: Initializes the game by checking if the clicked letter is in the word and updating game elements accordingly.
+   - Parameters:
+     - `button`: The button element that was clicked.
+     - `clickedLetter`: The letter corresponding to the clicked button.
+   - Actions:
+     - Checks if the clicked letter is in the current word.
+     - If the letter is correct, updates the `correctLetters` array and displays the guessed letters.
+     - If the letter is incorrect, increments the wrong guess count and updates the hangman image.
+     - Disables the clicked button.
+     - Checks for game over conditions (win or loss) and calls the `gameover` function accordingly.
+
+#### Event Listeners:
+1. **Keyboard Button Clicks**:
+   - Listens for clicks on keyboard buttons.
+   - Calls the `initGame` function with the clicked letter as a parameter.
+
+2. **Play Again Button Click**:
+   - Listens for clicks on the play again button.
+   - Calls the `getRandomWords` function to start a new game.
+
+#### Conclusion:
+The JavaScript code for the Hangman game provides functionality for initializing the game, handling user input, updating game state, and displaying game over messages. It utilizes event listeners to respond to user interactions with the keyboard buttons and play again button. Functions are modularized to perform specific tasks, such as resetting the game, selecting random words, handling game over scenarios, and initializing the game state. Overall, the JavaScript code enables the interactive and dynamic behavior of the Hangman game.
