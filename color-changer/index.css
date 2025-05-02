@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap : 10px;
+    height: 70vh;
+    flex-direction: column;
+    border: 2px solid black;
+    margin: 30px;
+}
+
+.btn{
+    height: 20vw;
+    width: 20vw;
+    border: 5px solid black;
+    border-radius: 23px;
+}
+
+#blue{
+    background-color: blue;
+}
+
+#green{
+    background-color: green;
+}
+
+#red{
+    background-color: red;
+}
+
+#grey{
+    background-color: grey;
+}
+
+p, h1{
+    font-size: 3rem;
+    font-family: "comic-sans";
+    margin-top: 10px;
+}
+
+@media(min-width : 630px){
+    .buttons{
+        flex-direction: row;
+    }
+}
