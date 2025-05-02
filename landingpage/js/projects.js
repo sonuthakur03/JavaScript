@@ -8,7 +8,7 @@ export const projectsData = [
     },
     {
       title: "Weather Dashboard",
-      path: "weather-dashboard",
+      path: "JavaScript/weather-dashboard",
       description: "Real-time weather forecasts",
       tags: ["API", "Weather"],
       image: "landingpage/images/weatherdash.png"
@@ -16,51 +16,52 @@ export const projectsData = [
     {
       title: "Text Reader",
       path: "text-read-speak/dist",
+      path: "JavaScript/text-read-speak/dist",
       description: "Text-to-speech application",
       tags: ["Web Speech API", "Accessibility"],
       image: "landingpage/images/textreader.png"
     },
     {
       title: "To-Do App",
-      path: "todo-app",
+      path: "JavaScript/todo-app",
       description: "Task management application",
       tags: ["CRUD", "Productivity"],
       image: "landingpage/images/todo.png"
     },
     {
       title: "Calculator",
-      path: "calculator",
+      path: "JavaScript/calculator",
       description: "Functional calculator with themes",
       tags: ["Math", "Utility"],
       image: "landingpage/images/calculator.png"
     },
     {
         title: "Rock Paper Scissors",
-        path: "rock-paper-scissors",
+        path: "JavaScript/rock-paper-scissors",
         description: "Classic game with a twist",
         tags: ["Game", "Interactive"],
         image: "landingpage/images/rps.png"
     },{
         title: "language-translator",
-        path: "language-translator",
+        path: "JavaScript/language-translator",
         description: "Language translation application",
         tags: ["API", "Translation"],
         image: "landingpage/images/langtrans.png"
     },{
         title: "Hangman",
-        path: "hangman-game",
+        path: "JavaScript/hangman-game",
         description: "Word guessing game",
         tags: ["Game", "Interactive"],
         image: "landingpage/images/hangman.png"
     },{
         title: "Slider Image Gallery",
-        path: "draggable-slider",
+        path: "JavaScript/draggable-slider",
         description: "Image gallery with draggable slider",
         tags: ["Gallery", "Interactive"],
         image: "landingpage/images/slider.png"
     },{
         title: "Stop Watch",
-        path: "stopTimer",
+        path: "JavaScript/stopTimer",
         description: "Simple stopwatch application",
         tags: ["Timer", "Utility"],
         image: "landingpage/images/stopwatch.png"
