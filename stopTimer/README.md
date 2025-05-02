@@ -1,0 +1,1 @@
+Stop Watch made with setinterval functions in javascript which shows minutes, seconds and milliseconds in timer and also records laps when paused and stopped.
