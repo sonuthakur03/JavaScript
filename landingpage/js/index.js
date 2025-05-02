@@ -10,7 +10,7 @@ projectsData.forEach(project => {
     projectCard.target = '_blank';
     projectCard.className = `project-card block bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg`;
     projectCard.innerHTML = `
-            <div class="h-36 overflow-hidden">
+            <div class="h-36 overflow-hidden bg-gray-200 rounded-t-xl relative group border-2 border-gray-100">
                 <img src="${project.image || 'https://via.placeholder.com/600x400?text=Project+Screenshot'}" 
                     alt="${project.title}" 
                     class="w-full h-full object-cover transition-transform duration-300">
